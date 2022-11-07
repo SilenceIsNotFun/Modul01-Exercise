@@ -1,5 +1,6 @@
 // clone splitting
 let arrayI= 0;
+let testPotong = "hello world!"
 let word2="";
 let wordCheck = ( word1 , separator ) => {
         hasilBagi=[]
@@ -13,19 +14,18 @@ let wordCheck = ( word1 , separator ) => {
         word2="";
         return hasilBagi;
 };
-console.log (wordCheck("Hello world!" , 'l'));
-let testPotong = "hello world!"
+console.log (wordCheck(testPotong, 'l'));
 console.log(testPotong.split("l"))
 
 
-//min max average
+//min max average sort
 let minNumb = "";
 let maxNumb = "";
 let averNumb = "";
 let semkata = "";
 let c = 0
 let minMax =(arr1=[]) => {
-    c = arr1.reduce ((a,b) => a+b , 0)/ arr1.length
+    
     urutan = arr1.sort(function (a,b) {return a - b})
     minNumb += `angka terkecil dari ${arr1} adalah ${urutan[0]}`
     maxNumb += `angka terbesar dari ${arr1} adalah ${urutan[arr1.length -1]}`
@@ -39,6 +39,31 @@ let minMax =(arr1=[]) => {
 
 console.log (minMax([29 , 1 , 10 , 11, 30, 50, 22]));
 
+//minMax  average without sort
+let y = 0
+let minNumb1=""
+let maxNumb1=""
+let averNumb1=""
+let sem1kata=""
+let minMaxLoop= (arr1=[]) => {
+    c = arr1.reduce ((a,b) => a+b , 0)/ arr1.length
+    y = arr1[0]
+    z = arr1[0]
+    for(x=0 ;x < arr1.length; x++){
+            
+          if (y > arr1[x]){
+            y= arr1[x]
+        } else if(z < arr1[x]){
+            z=arr1[x]
+        }
+    }
+    minNumb1 += `angka terkecil dari ${arr1} adalah ${y}`
+    maxNumb1 += `angka terbesar dari ${arr1} adalah ${z}`
+    averNumb1 += `rata rata dari ${arr1} adalah ${Math.round(c)}`
+    sem1kata += `${minNumb1}\n${maxNumb1}\n${averNumb1}`
+    return sem1kata
+}
+console.log (minMaxLoop([29 , 1 , 10 , 11, 30, 50, 22]));
 //calculate
 let e = 0
 
@@ -103,7 +128,6 @@ console.log (oddNumRem(angkaCheck));
 //congcat
 arr11 =["hello" ,"world" , "disini", "ada", "saya"]
 arr10 = ""
-arr12 = []
 let kata = (arr1=[]) =>{
     for(h=0; h < arr1.length-2 ; h++){
         
@@ -116,7 +140,7 @@ let kata = (arr1=[]) =>{
         arr1.shift()
     } arr10 += `${arr1.join(" and ")}`
     
-    arr12 = arr10.toa
+   return arr10
 }
 console.log(arr11);
 console.log(kata(arr11));
