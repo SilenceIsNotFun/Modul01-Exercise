@@ -25,7 +25,7 @@ let averNumb = "";
 let semkata = "";
 let c = 0
 let minMax =(arr1=[]) => {
-    
+    c = arr1.reduce ((a,b) => a+b , 0)/ arr1.length
     urutan = arr1.sort(function (a,b) {return a - b})
     minNumb += `angka terkecil dari ${arr1} adalah ${urutan[0]}`
     maxNumb += `angka terbesar dari ${arr1} adalah ${urutan[arr1.length -1]}`
