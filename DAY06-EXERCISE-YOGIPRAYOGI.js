@@ -22,9 +22,10 @@ let dbStudent = [ new student("tono", "tono.kece@gmail.com", "10/27/2000", 71),
                  new student("kasih", "kasihku@gmail.com", "11/27/1999",  74)];
 
 let pembandingScore = dbStudent.sort(function(a,b){return a.score - b.score})
-let min = `paling rendah nama :${pembandingScore[0].nama}, email : ${pembandingScore[0].email}, age :${pembandingScore[0].age} ,score :${pembandingScore[0].score}`
-// let averScore = []
-// for (score in dbStudent){
-//     averScore.push (dbStudent.score)
-// }
+let min = `paling rendah ${Object.values(pembandingScore[0])}`
+let averScore = []
+for (f=0; f < dbStudent.length ; f++){
+    averScore.push (dbStudent.score[0])
+}
+console.log(averScore);
 console.log(min);
